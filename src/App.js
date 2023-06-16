@@ -11,8 +11,11 @@ function App() {
     const [loading, setLoading] = useState(false);
     const { open: modalOpen, setOpen: setModalOpen } = useContext(ModalContext);
     const [url, setURL] = useState("https://swapi.dev/api/people");
+    const [actorUrl, setActorURL] = useState();
 
-    const openModal = () => {
+    const openModal = (actorURL) => {
+        console.log(actorURL);
+        setActorURL(actorURL);
         setModalOpen(true);
     };
 
@@ -58,20 +61,26 @@ function App() {
 
     return (
         <div className="w-screen flex justify-center items-center flex-col   -z-50">
-            <div className="flex-col gap-14 bg-violet-700/60  relative px-8 overflow-hidden hero shadow-md shadow-black/30 flex justify-end items-center pb-16 h-80 w-screen">
-                <div className="w-full flex justify-start px-6">
-                    <img src="/assets/star_wars.png" className="w-24" />
+            {/* **********************Hero Seciton******************* */}
+
+            <div className="flex-col md:gap-14 gap-6 bg-violet-700/60  relative px-4 md:px-8 overflow-hidden hero shadow-md shadow-black/30 flex md:justify-end justify-around items-center md:pb-16 h-80 w-screen">
+                <div className="w-full flex justify-start md:px-6">
+                    <img src="/assets/star_wars.png" className="md:w-24 w-20" />
                 </div>
                 <img
                     src="/assets/star_wars.jpg"
-                    className="absolute -top-1/2 left-0 -z-50"
+                    className="absolute w-full h-full md:h-auto md:-top-1/2 left-0 -z-50"
                 />
-                <div className="text-4xl font-bold text-white">
+                <div className="md:text-4xl text-3xl text-center md:text-left font-bold text-white">
                     All the best star wars characters in one place.
                 </div>
                 <SearchBar onClick={onSearch} />
+                <div className="md:hidden"></div>
             </div>
-            <div className="flex flex-wrap justify-center gap-8 pt-10 px-8 z-10 bg-violet-50">
+
+            {/* ***********************************Cards************************ */}
+
+            <div className="flex flex-wrap justify-center gap-8 pt-10 px-8 z-1">
                 {!data
                     ? Array.from("12345678").map(() => {
                           return <Card loading={loading} />;
@@ -84,14 +93,17 @@ function App() {
                                   name={d.name}
                                   height={d.height}
                                   birth_year={d.birth_year}
+                                  actorURL={d.url}
                                   detail={openModal}
                               />
                           );
                       })}
 
-                {modalOpen && <Modal close={() => setModalOpen(false)} />}
+                {modalOpen && (
+                    <Modal close={() => setModalOpen(false)} url={actorUrl} />
+                )}
             </div>
-            <div className="h-20 pt-4 w-full flex justify-center items-center  bg-violet-50">
+            <div className="h-20 pt-4 w-full flex justify-center items-center  ">
                 {!loading && (
                     <div className="flex gap-8 w-full justify-center">
                         <div
