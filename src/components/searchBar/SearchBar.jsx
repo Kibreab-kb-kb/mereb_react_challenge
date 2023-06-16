@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 const SearchBar = ({ onClick }) => {
     const [char, setChar] = useState();
     return (
-        <div className="rounded-full overflow-hidden w-96 border-violet-600/20 border-2 py-0.5 bg-white flex justify-between items-center gap-6 ">
+        <div className="rounded-full overflow-hidden md:w-96 w-80 border-violet-600/20 border-2 py-0.5 bg-white flex justify-between items-center gap-6 ">
             <input
                 className="outline-none px-4 py-1 w-40 rounded text-neutral-800"
                 placeholder="Search character"
