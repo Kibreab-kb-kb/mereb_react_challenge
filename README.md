@@ -1,19 +1,45 @@
-Contains React.Js code challenge for internship applicants to Mereb Technologies. Please carefully follow the instructions given below.
+# Actors React App
 
-**Create Simple React.Js application**
+This is a simple React.js application that fetches a list of actors from the Star Wars API and displays them as cards. Each card includes the actor's name, height, birth year, and a "Detail" button. Clicking the "Detail" button displays the details of the selected actor in a separate component.
 
-Your task is to create react.js application and fetch a list of actors with the films they have been involved from a given API endpoint and render the list of actors on the page. Each actor should be displayed as a card with its name, height,birth_year and an "Detail" button.
+## Installation
 
-**Details:**
+1. Clone the repository: git clone https://github.com/Kibreab-kb-kb/mereb_react_challenge.git
+2. Navigate to the project directory: cd mereb_react_challenge
+3. Install the dependencies: npm install
 
-1. Fetch the product data from the following API endpoint: https://swapi.dev/api/people.
+## Usage
 
-2. Display the list of actors as cards. Each card should include the product name, height,birth_year and an "Detail" button.
+1. Start the development server: npm start
+2. Open your web browser and visit: http://localhost:3000
 
-3. When the "Detail" button is clicked, the selected actor should be displayed in separated component with the detail of an actor.
+## Features
 
-4. Use appropriate CSS styles to make the actor list visually appealing.
+-   Fetches a list of actors from the Star Wars API.
+-   Displays actors as cards with their name, height, birth year, and a "Detail" button.
+-   It handles loading and error states.
+-   Includes unit tests to ensure component functionality.
 
-5. Errors and loading states should be handled.
-6. Write unit tests to ensure that the components behave as expected.
-   
+## Technologies Used
+
+-   React.js
+-   TailwindCSS
+-   axios
+-   Jest (for unit testing)
+
+## Folder Structure
+
+```
+src
+├── components
+│ ├── Card
+│   ├── Card.jsx
+│   ...
+│
+├── App.js
+└── App.test.js
+```
+
+The `components` folder stores the the components that will be used for the app.
+
+The `App.js` file serves as the entry point for the entire website.
