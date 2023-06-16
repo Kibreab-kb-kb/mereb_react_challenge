@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ name, height, birth_year, detail, loading, actorURL }) => {
     return (
-        <div className="flex flex-col gap-3 md:w-60 w-80 drop-shadow-lg rounded-md p-4 shadow-sm shadow-black/20 bg-white md:h-40 h-52">
+        <div className="flex flex-col gap-3 md:w-60 w-[80vw] drop-shadow-lg rounded-md p-4 shadow-sm shadow-black/20 bg-white md:h-40 h-52">
             {loading && (
                 <div className="h-full">
                     <div className="loading bg-neutral-300 w-full h-5 rounded-sm transition-all duration-150 "></div>
